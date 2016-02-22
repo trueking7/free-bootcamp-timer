@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-// version 1.0
+// testing version 2.0
 public class MainActivity extends AppCompatActivity {
 
     EditText workTimeEditText;
