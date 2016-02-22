@@ -14,6 +14,7 @@ public class TimerActivity extends AppCompatActivity {
     TextView workTextView;
     TextView restTextView;
     TextView repsTextView;
+    TextView directionTextView;
     CountDownTimer workTimer30;
     CountDownTimer workTimer;
     CountDownTimer restTimer10;
@@ -24,8 +25,7 @@ public class TimerActivity extends AppCompatActivity {
 
 
     // Timer method
-    public int timer(final int workTime, final int restTime, final int reps){
-
+    public int timer(final int workTime, final int restTime, final int reps) {
 
 
         repsTextView.setText("Number of reps: " + reps);
@@ -40,6 +40,7 @@ public class TimerActivity extends AppCompatActivity {
                 int secondsUntilFinished = (int) millisUntilFinished / 1000;
 
                 workTextView.setText("Exercise: " + Integer.toString(secondsUntilFinished));
+                directionTextView.setText("Exercise!");
 
                 if (isCanceled) {
                     cancel();
@@ -55,7 +56,7 @@ public class TimerActivity extends AppCompatActivity {
                 MediaPlayer mplayer = MediaPlayer.create(getApplicationContext(), R.raw.bell);
                 mplayer.start();
                 workTextView.setText("Exercise: " + workTime * 60);
-                repsTextView.setText("Number of reps: "  + reps);
+                repsTextView.setText("Number of reps: " + reps);
 
                 restTimer = new CountDownTimer(restTime * 1000, 1000) {
 
@@ -66,6 +67,7 @@ public class TimerActivity extends AppCompatActivity {
                         int secondsUntilFinished = (int) millisUntilFinished / 1000;
 
                         restTextView.setText("Rest: " + Integer.toString(secondsUntilFinished));
+                        directionTextView.setText("Rest!");
 
 
                         if (isCanceled) {
@@ -83,9 +85,9 @@ public class TimerActivity extends AppCompatActivity {
                         mplayer.start();
                         restTextView.setText("Rest: " + restTime);
                         int repCounter = reps - 1;
-                        if(repCounter > 0) {
+                        if (repCounter > 0) {
                             timer(workTime, restTime, repCounter);
-                        } else{
+                        } else {
                             endTask();
                         }
 
@@ -171,6 +173,7 @@ public class TimerActivity extends AppCompatActivity {
         workTextView = (TextView) findViewById(R.id.workTextView);
         restTextView = (TextView) findViewById(R.id.restTextView);
         repsTextView = (TextView) findViewById(R.id.repsTextView);
+        directionTextView = (TextView) findViewById(R.id.directionTextView);
 
         Bundle bundle = getIntent().getExtras();
 
@@ -179,23 +182,19 @@ public class TimerActivity extends AppCompatActivity {
         int reps = bundle.getInt("reps");
 
 
+        timer(workTime, restTime, reps);
 
 
+    }
 
-           timer(workTime, restTime, reps);
-
-
-
-
-        }
-    public void endTask(){
+    public void endTask() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         isCanceled = true;
 
     }
 
-    }
+}
 
 
 
