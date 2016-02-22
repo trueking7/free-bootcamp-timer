@@ -1,11 +1,13 @@
 package com.truewebdev.freebootcamptimer;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class TimerActivity extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class TimerActivity extends AppCompatActivity {
     CountDownTimer workTimer;
     CountDownTimer restTimer10;
     CountDownTimer restTimer;
+    RelativeLayout relativeLayout;
     int repCounter;
 
     private boolean isCanceled = false;
@@ -40,7 +43,9 @@ public class TimerActivity extends AppCompatActivity {
                 int secondsUntilFinished = (int) millisUntilFinished / 1000;
 
                 workTextView.setText("Exercise: " + Integer.toString(secondsUntilFinished));
-                directionTextView.setText("Exercise!");
+                directionTextView.setText("Exercise now!");
+                relativeLayout.setBackgroundColor(Color.parseColor("#008000"));
+
 
                 if (isCanceled) {
                     cancel();
@@ -67,7 +72,8 @@ public class TimerActivity extends AppCompatActivity {
                         int secondsUntilFinished = (int) millisUntilFinished / 1000;
 
                         restTextView.setText("Rest: " + Integer.toString(secondsUntilFinished));
-                        directionTextView.setText("Rest!");
+                        directionTextView.setText("Rest now!");
+                        relativeLayout.setBackgroundColor(Color.parseColor("#FF0000"));
 
 
                         if (isCanceled) {
@@ -169,7 +175,7 @@ public class TimerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 
-
+        relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
         workTextView = (TextView) findViewById(R.id.workTextView);
         restTextView = (TextView) findViewById(R.id.restTextView);
         repsTextView = (TextView) findViewById(R.id.repsTextView);
