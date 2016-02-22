@@ -26,7 +26,6 @@ public void startTimer(View view) throws IllegalStateException{
     if (TextUtils.isEmpty(workTimeEditText.getText().toString()) || TextUtils.isEmpty(restTimeEditText.getText().toString()) || TextUtils.isEmpty(repsEditText.getText().toString()) ) {
 
         Toast.makeText(getApplicationContext(), "Please enter values in all three fields!", Toast.LENGTH_LONG).show();
-        return;
 
     } else if (Integer.parseInt(restTimeEditText.getText().toString()) < 30) {
 

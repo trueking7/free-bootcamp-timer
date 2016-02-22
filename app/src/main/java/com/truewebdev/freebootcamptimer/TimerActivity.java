@@ -31,8 +31,8 @@ public class TimerActivity extends AppCompatActivity {
     public int timer(final int workTime, final int restTime, final int reps) {
 
 
-        repsTextView.setText("Number of reps: " + reps);
-        restTextView.setText("Rest: " + restTime);
+        repsTextView.setText(getString(R.string.repsSetText) + reps);
+        restTextView.setText(getString(R.string.restText) + restTime);
 
         workTimer = new CountDownTimer(workTime * 60000, 1000) {
 
@@ -42,8 +42,8 @@ public class TimerActivity extends AppCompatActivity {
 
                 int secondsUntilFinished = (int) millisUntilFinished / 1000;
 
-                workTextView.setText("Exercise: " + Integer.toString(secondsUntilFinished));
-                directionTextView.setText("Exercise now!");
+                workTextView.setText(getString(R.string.exercise) + Integer.toString(secondsUntilFinished));
+                directionTextView.setText(R.string.exercise2);
                 relativeLayout.setBackgroundColor(Color.parseColor("#008000"));
 
 
@@ -60,8 +60,8 @@ public class TimerActivity extends AppCompatActivity {
 
                 MediaPlayer mplayer = MediaPlayer.create(getApplicationContext(), R.raw.bell);
                 mplayer.start();
-                workTextView.setText("Exercise: " + workTime * 60);
-                repsTextView.setText("Number of reps: " + reps);
+                workTextView.setText(getString(R.string.exercise3) + workTime * 60);
+                repsTextView.setText(getString(R.string.reps2) + reps);
 
                 restTimer = new CountDownTimer(restTime * 1000, 1000) {
 
@@ -71,8 +71,8 @@ public class TimerActivity extends AppCompatActivity {
 
                         int secondsUntilFinished = (int) millisUntilFinished / 1000;
 
-                        restTextView.setText("Rest: " + Integer.toString(secondsUntilFinished));
-                        directionTextView.setText("Rest now!");
+                        restTextView.setText(getString(R.string.rest1) + Integer.toString(secondsUntilFinished));
+                        directionTextView.setText(R.string.rest2);
                         relativeLayout.setBackgroundColor(Color.parseColor("#FF0000"));
 
 
@@ -89,7 +89,7 @@ public class TimerActivity extends AppCompatActivity {
 
                         MediaPlayer mplayer = MediaPlayer.create(getApplicationContext(), R.raw.bell);
                         mplayer.start();
-                        restTextView.setText("Rest: " + restTime);
+                        restTextView.setText(getString(R.string.rest3) + restTime);
                         int repCounter = reps - 1;
                         if (repCounter > 0) {
                             timer(workTime, restTime, repCounter);

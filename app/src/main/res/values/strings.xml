@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Free Bootcamp Timer</string>
+    <string name="workoutTime">Enter workout time in minutes:</string>
+    <string name="restTime">Enter rest time in seconds:</string>
+    <string name="reps">Enter number of reps:</string>
+    <string name="exerciseTime">Exercise Time: 5:00</string>
+    <string name="restTimer">Rest Time: 0:30</string>
+    <string name="numberOfReps">Number of Reps:</string>
+    <string name="repsSetText">"Number of reps: "</string>
+    <string name="restText">"Rest: "</string>
+    <string name="exercise">"Exercise: "</string>
+    <string name="exercise2">Exercise now!</string>
+    <string name="exercise3">"Exercise: "</string>
+    <string name="reps2">"Number of reps: "</string>
+    <string name="rest1">"Rest: "</string>
+    <string name="rest2">Rest now!</string>
+    <string name="rest3">"Rest: "</string>
 </resources>
