@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Bootcamp Timer</string>
+    <string name="app_name">Bootcamp Timer (Free)</string>
     <string name="workoutTime">Enter workout time in minutes:</string>
     <string name="restTime">Enter rest time in seconds:</string>
     <string name="reps">Enter number of reps:</string>
