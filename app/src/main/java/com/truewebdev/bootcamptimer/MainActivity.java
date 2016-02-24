@@ -1,4 +1,4 @@
-package com.truewebdev.freebootcamptimer;
+package com.truewebdev.bootcamptimer;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
