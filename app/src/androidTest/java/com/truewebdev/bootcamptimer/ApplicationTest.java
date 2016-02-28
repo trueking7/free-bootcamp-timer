@@ -1,4 +1,4 @@
-package com.truewebdev.freebootcamptimer;
+package com.truewebdev.bootcamptimer;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
