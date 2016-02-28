@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class TimerActivity extends AppCompatActivity {
 
 
@@ -187,8 +190,11 @@ public class TimerActivity extends AppCompatActivity {
         int restTime = bundle.getInt("restTime");
         int reps = bundle.getInt("reps");
 
-
         timer(workTime, restTime, reps);
+
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
     }
